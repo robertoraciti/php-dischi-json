@@ -19,7 +19,7 @@
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href=".//css/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- BOOTSTRAP -->
     <link
@@ -33,9 +33,28 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- JAVASCRIPT -->
-    <script src=".//js/main.js" defer></script>
+    <script src="./frontend/js/main.js" defer></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <header class="header">
+      <div class="container">
+        <img src="./spotify-logo-transparent-free-png.webp" alt="" width="80" />
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div id="app">
+        <div class="card-container">
+          <div class="card-el" v-for="(disk , index) in disks">
+            <div class="card-body p-3">
+              <img :src="disk.poster" alt="" srcset="" />
+              <p class="m-0 fw-bold my-2">{{ disk.title }}</p>
+              <p class="author">{{ disk.author }}</p>
+              <p class="m-0 fw-bold mt-2">{{ disk.year }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
